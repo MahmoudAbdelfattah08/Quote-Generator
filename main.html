@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1c1c1c, #343434); 
+            font-family: 'Montserrat', sans-serif; /* Strong, bold font */
+            color: #fff;
+            overflow: hidden;
+        }
+
+        /* Container for content */
+        .quote-container {
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent black glass effect */
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            max-width: 600px;
+            width: 90%;
+            margin: 0 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            color: #e0b084; 
+            text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+            font-family: 'Montserrat', sans-serif; /* Same modern, bold font as the button */
+        }
+
+        p {
+            font-size: 22px;
+            text-align: center;
+            max-width: 500px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            color: #f2f2f2;
+            font-weight: 700; 
+            word-spacing: 3px;
+            font-style: normal; 
+            animation: appear 0.8s ease-in-out;
+            font-family: 'Playfair Display', serif; /* Elegant serif font */
+        }
+
+
+        @keyframes appear {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        button {
+            padding: 14px 40px;
+            font-size: 18px;
+            color: #e0b084;
+            background-color: #2b2b2b;
+            border: 2px solid #e0b084; 
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            font-family: 'Montserrat', sans-serif; /* Bold modern font */
+        }
+
+        button:hover {
+            background-color: #e0b084; 
+            color: #2b2b2b; 
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 20px;
+            }
+            button {
+                font-size: 16px;
+                padding: 10px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="quote-container">
+        <h1>Random Quote Generator</h1>
+        <p id="quote">"Click the button to generate a random quote!"</p>
+        <button onclick="generateQuote()">Generate Quote</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
